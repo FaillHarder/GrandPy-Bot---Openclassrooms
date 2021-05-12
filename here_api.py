@@ -1,49 +1,33 @@
+from config import apiKey
 import requests
-from pprint import pprint
-
-
-# class HereApi:
-
-#     def __init__(self):
-#         pass
-
-#     def request_get():
-
-# url = "https://geocode.search.hereapi.com/v1/geocode"
-# params = {
-#     "apiKey": apiKey,
-#     "q" :"parc des princes"
-# }
-
-# response = requests.get(url, params)
-# response_json = response.json()
-# infos_api = response_json["items"]
-
-# for info in infos_api:
-#     address = info.get("address")
-#     position = info.get("position")
 
 
 
+class HereApi:
+
+    def get_request(self, texte):
+
+        url = "https://geocode.search.hereapi.com/v1/geocode"
+        params = {
+            "apiKey": apiKey,
+            "q" : texte
+        }
+        response = requests.get(url, params)
+        response_json = response.json()
+        infos_api = response_json["items"]
+        self.address = infos_api[0]["address"]["label"]
+        self.lat = infos_api[0]["position"]["lat"]
+        self.lng = infos_api[0]["position"]["lng"]
+        return {"address": self.address,
+                "lat": self.lat,
+                "lng": self.lng 
+                }
+
+# texte = "parc des princes"
+# text = HereApi().get_request(texte)
+# print(text)
 
 
 
-
-
-
-
-# lat = "48.8414"
-# lng = "2.25308"
-
-# url2 = "https://image.maps.ls.hereapi.com/mia/1.6/mapview"
-# params2 = {
-#     "apiKey": apiKey,
-#     "c": "48.8414, 2.25308",
-#     "z": "14",
-#     "t": "3"
-# }
-
-# response_img = requests.get(url2, params2)
-# print(response_img)
 
 

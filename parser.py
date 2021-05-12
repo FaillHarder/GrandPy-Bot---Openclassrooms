@@ -46,6 +46,6 @@ class Parser:
         return sentence
 
 
-message = "Salut GrandPy! Peux-tu me dire ou se trouve le Piton de! la$ Fournaise?"
-message_clear = Parser().clean(message)
-print(message_clear)
+# message = "Salut GrandPy! Peux-tu me dire ou se trouve le Piton de! la$ Fournaise?"
+# message_clear = Parser().clean(message)
+# print(message_clear)
