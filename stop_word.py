@@ -62,8 +62,8 @@ stop_word = ["a","abord","absolument","afin","ah","ai","aie","ailleurs","ainsi",
     "tien","tienne","tiennes","tiens","toc","toi","toi-même","ton","touchant",
     "toujours","tous","tout","toute","toutefois","toutes","treize","trente","tres",
     "trois","troisième","troisièmement","trop","très","tsoin","tsouin","tu","té",
-    "u","un","une","unes","uniformement","unique","uniques","uns","v","va","vais",
+    "u","un","une","unes","uniformement","unique", "trouve","uniques","uns","v","va","vais",
     "vas","veux", "voudrais","vers","via","vif","vifs","vingt","vivat","vive","vives","vlan","voici",
     "voilà","vont","vos","votre","vous","vous-mêmes","vu","vé","vôtre","vôtres",
     "w","x","y","z","zut","à","â","ça","ès","étaient","étais","était","étant",
-    "été","être","ô","connais", "adresse", "grandpy", "l'adresse", "salut"]
+    "été","être","ô","connais", "sais", "adresse", "grandpy", "l'adresse", "salut"]
