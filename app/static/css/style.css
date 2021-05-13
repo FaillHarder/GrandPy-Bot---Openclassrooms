@@ -80,6 +80,10 @@ h1 {
     margin-bottom: 15px;
 }
 
+#mapContainer {
+    float: right;
+}
+
 aside {
     padding: 15px;
     height: 767px;

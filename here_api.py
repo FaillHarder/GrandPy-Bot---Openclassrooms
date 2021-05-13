@@ -5,12 +5,12 @@ import requests
 
 class HereApi:
 
-    def get_request(self, texte):
+    def get_request(self, sentence_parser):
 
         url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {
             "apiKey": apiKey,
-            "q" : texte
+            "q" : sentence_parser
         }
         response = requests.get(url, params)
         response_json = response.json()
@@ -23,9 +23,9 @@ class HereApi:
                 "lng": self.lng 
                 }
 
-# texte = "parc des princes"
-# text = HereApi().get_request(texte)
-# print(text)
+texte = "le piton de la fournaise"
+text = HereApi().get_request(texte)
+print(text)
 
 
 
