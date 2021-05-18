@@ -5,12 +5,13 @@ var platform = new H.service.Platform({
 
 // Get the default map types from the Platform object:
 var maptypes = platform.createDefaultLayers();
-
+var latitude = 45.72077;
+var longitude = 3.98732;
 // Instantiate the map:
 var map = new H.Map(
-    document.getElementById('mapContainer'),
+    document.getElementById('map_container'),
     maptypes.vector.normal.map,
-    coords = {lat: 45.72077, lng: 3.98732},
+    coords = {lat: latitude, lng: longitude},
     );
 
 var animatedSvg =
@@ -38,11 +39,13 @@ var animatedSvg =
     'repeatCount="indefinite"/></ellipse></svg>';
 
 var icon = new H.map.DomIcon(animatedSvg),
-    coords = {lat: 45.72077, lng: 3.98732},
+    coords = {lat: latitude, lng: longitude},
     marker = new H.map.DomMarker(coords, {icon: icon});
+
 
 // Create the default UI:
 var ui = H.ui.UI.createDefault(map, maptypes, 'fr-FR');
 map.setCenter(coords);
-map.setZoom(18);
+map.setZoom(14);
 map.addObject(marker);
+

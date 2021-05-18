@@ -2,7 +2,7 @@ from stop_word import stop_word
 import re
 
 
-class Parser:
+class ParserSentence:
     def __init__(self):
         self.sentence = None
 
@@ -31,11 +31,13 @@ class Parser:
         for word in sentence_list_substitute:
             if word in sentence_list:
                 liste_index.append(sentence_list.index(word))
-        first_index = liste_index[0]
-        last_index = liste_index[-1]
-        sentence_clear = " ".join(sentence_list[first_index:last_index+1])
-        return sentence_clear
-
+        if len(liste_index) >= 1:
+            first_index = liste_index[0]
+            last_index = liste_index[-1]
+            sentence_clear = " ".join(sentence_list[first_index:last_index+1])
+            return sentence_clear
+        else:
+            return None
 
     def clean(self, sentence):
         sentence = self.remove_uppercase(sentence)
@@ -45,6 +47,6 @@ class Parser:
         return sentence
 
 
-# message = "Salut GrandPy! Peux-tu me dire ou se trouve le Piton de! la$ Fournaise?"
-# message_clear = Parser().clean(message)
+# message = "Salut"
+# message_clear = ParserSentence().clean(message)
 # print(message_clear)
