@@ -1,10 +1,17 @@
-from flask import Flask, render_template, url_for
+import re
+from flask import render_template, url_for, request, jsonify
+from . import app
+from wiki_api import WikiApi
+from grandpy import Grandpy
 
-app = Flask(__name__)
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+@app.route("/ajax", methods=["POST"])
+def ajax():
+    user_text = request.form["user_input"]
+    response = Grandpy().get_response(user_text)
+    print(response)
+    return jsonify(response)

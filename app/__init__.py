@@ -1,5 +1,5 @@
 from flask import Flask
-from .views import app
 
+app = Flask(__name__)
 
-app.static_folder = 'static'
+from . import views
