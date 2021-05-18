@@ -22,7 +22,6 @@
                 <li><a href="#https://www.python.org/"><img src="static/img/python.svg" alt="icon python">Python</a></li>
                 <li><a href="#https://flask.palletsprojects.com/en/1.1.x/"><img src="static/img/flask.svg" alt="icon flask">Flask</a></li>
                 <li><a href="#https://www.javascript.com/"><img src="static/img/javascript.svg" alt="icon javascript">JavaScript</a></li>
-                <li><a href="#https://jquery.com/"><img src="static/img/jquery.svg" alt="icon jquery">Jquery</a></li>
             </ul>
         </nav>
 
@@ -32,15 +31,14 @@
                 <div id="map_container">
                     <script src="{{ url_for('static', filename='js/map.js') }}"></script>
                 </div>
-                <p id="text_1"></p>
-                <p class="bubble bubble-bottom-left">Bienvenu mon petit je suis GrandPy, le papy robot. </p>
+                <p class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. </p>
                 
             </div>
             <form id="user_text_form">
                 <p>
                     <label for="user_input"></label>
                     <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse d'OpenClassrooms?">
-                    <input type="submit" name="user_submit" id="user_submit" value="Envoyer""">
+                    <input type="submit" name="user_submit" id="user_submit" value="Envoyer">
                 </p>
             </form>
             <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>

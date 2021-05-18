@@ -1,6 +1,10 @@
-from parser_sentence import ParserSentence
 from here_api import HereApi
+from message_grandpy import grandpy_error, grandpy_response, grandpy_story
+from parser_sentence import ParserSentence
 from wiki_api import WikiApi
+
+from random import choice
+
 
 class Grandpy:
 
@@ -11,23 +15,17 @@ class Grandpy:
         data_here_api = HereApi().get_request(user_message)
         if data_here_api == None:
             data = {
-                "grandpy_address": "Désolé mon petit je n'ai pas compris ta demande"
+                "grandpy_error": choice(grandpy_error)
                 }
             return data
         else:
             data_wiki_api = WikiApi().get_description(user_message)
             data = {
-                "grandpy_address": "Bien sûr mon poussin ! La voici : ",
+                "grandpy_address": choice(grandpy_response),
                 "address": data_here_api["address"],
-                "grandpy_descript": "Mais t'ai-je déjà raconté l'histoire de ce quartier qui m'a vu en culottes courtes ? ",
+                "grandpy_descript": choice(grandpy_story),
                 "descriptif": data_wiki_api,
                 "lat": data_here_api["lat"],
                 "lng": data_here_api["lng"]
             }
             return data
-
-
-
-# sentence = "openclassrooms"
-# response = Grandpy().get_response(sentence)
-# print(response)

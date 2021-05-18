@@ -13,5 +13,4 @@ def home():
 def ajax():
     user_text = request.form["user_input"]
     response = Grandpy().get_response(user_text)
-    print(response)
     return jsonify(response)

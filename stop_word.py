@@ -11,7 +11,7 @@ stop_word=[
         "auxquelles", "auxquels", "avaient", "avais", "avait",
         "avant", "avec", "avoir", "avons", "ayant", "b", "bah",
         "bas", "basee", "bat", "beau", "beaucoup", "bien",
-        "bigre", "boum", "bravo", "brrr", "c", "car", "ce",
+        "bigre", "bonjour", "boum", "bravo", "brrr", "c", "car", "ce",
         "ceci", "cela", "celle", "celle-ci", "m", "celle-là",
         "celles", "celles-ci", "celles-là", "celui", "celui-ci",
         "celui-là", "cent", "cependant", "certain", "certaine",
