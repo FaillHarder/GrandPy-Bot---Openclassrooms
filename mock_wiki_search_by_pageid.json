@@ -1,0 +1,21 @@
+{
+    "batchcomplete": true,
+    "warnings": {
+        "main": {
+            "warnings": "Unrecognized parameter: ewplaintext."
+        },
+        "extracts": {
+            "warnings": "The \"exsentences\" parameter may have unexpected results when used in HTML mode.\nHTML may be malformed and/or unbalanced and may omit inline images. Use at your own risk. Known problems are listed at https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TextExtracts#Caveats."
+        }
+    },
+    "query": {
+        "pages": [
+            {
+                "pageid": 164149,
+                "ns": 0,
+                "title": "Piton de la Fournaise",
+                "extract": "<p class=\"mw-empty-elt\">\n</p>\n\n\n<p class=\"mw-empty-elt\">\n</p>\n<p>Le <b>piton de la Fournaise</b>,  culminant à 2&#160;632&#160;mètres d'altitude, est le volcan actif de l'île de La Réunion, département et région d'outre-mer de France, située dans l'océan Indien. Il correspond au sommet et au flanc oriental du massif du Piton de la Fournaise, un volcan bouclier qui constitue 40&#160;% de l'île dans sa partie sud-est.</p>"
+            }
+        ]
+    }
+}

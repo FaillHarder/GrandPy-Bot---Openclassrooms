@@ -6,9 +6,12 @@ grandpy_response = [
             ]
 
 grandpy_story = [
-            "Mais t'ai-je déjà raconté l'histoire de ce quartier qui m'a vu en culottes courtes ?",
-            "T'ai-je déjà raconté l'histoire de cet endroit qui a vue GrandMy en couche culotte ?",
-            "Mais t'ai-je déjà raconté l'histoire de ce lieu qui ma vue jeune homme"
+            "Mais t'ai-je déjà raconté l'histoire de ce\
+                quartier qui m'a vu en culottes courtes ?",
+            "T'ai-je déjà raconté l'histoire de cet endroit\
+                qui a vue GrandMy en couche culotte ?",
+            "Mais t'ai-je déjà raconté l'histoire de ce lieu\
+                qui ma vue jeune homme"
         ]
 grandpy_error = [
         "Désolé mon petit je n'ai pas compris ta demande!",

@@ -13,7 +13,7 @@ class Grandpy:
         par = ParserSentence()
         user_message = par.clean(sentence)
         data_here_api = HereApi().get_request(user_message)
-        if data_here_api == None:
+        if data_here_api is None:
             data = {
                 "grandpy_error": choice(grandpy_error)
                 }

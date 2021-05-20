@@ -24,15 +24,12 @@
                 <li><a href="#https://www.javascript.com/"><img src="static/img/javascript.svg" alt="icon javascript">JavaScript</a></li>
             </ul>
         </nav>
-
         <main>
-            
+            <div id="map_container">
+                <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+            </div>
             <div class="conversation">
-                <div id="map_container">
-                    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
-                </div>
                 <p class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. </p>
-                
             </div>
             <form id="user_text_form">
                 <p>
@@ -42,20 +39,6 @@
                 </p>
             </form>
             <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
-            <!--
-            <script>
-                let form = document.querySelector("#user_text_form");
-
-                form.addEventListener("submit", function (event) {
-                    event.preventDefault();
-
-                    fetch("/ajax", {
-                        method: "POST",
-                        body: new FormData(form)
-                    });
-                })
-            </script>
-        -->
         </main>
         <aside>
             <img src="static/img/grandpybot.png" alt="image robot">

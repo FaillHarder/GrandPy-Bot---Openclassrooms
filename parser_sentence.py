@@ -3,6 +3,7 @@ import re
 
 
 class ParserSentence:
+
     def __init__(self):
         self.sentence = None
 
@@ -17,9 +18,6 @@ class ParserSentence:
         sentence = re.sub(r'[^\w\s]','',sentence)
         return sentence
 
-    def remove_extra_space(self, sentence):
-        sentence.replace("  ", " ")
-        return sentence
 
     def extract_word(self, sentence):
         liste_index = []
@@ -39,14 +37,9 @@ class ParserSentence:
         else:
             return None
 
+
     def clean(self, sentence):
         sentence = self.remove_uppercase(sentence)
         sentence = self.remove_punctuation(sentence)
-        sentence = self.remove_extra_space(sentence)
         sentence = self.extract_word(sentence)
         return sentence
-
-
-# message = "Salut"
-# message_clear = ParserSentence().clean(message)
-# print(message_clear)

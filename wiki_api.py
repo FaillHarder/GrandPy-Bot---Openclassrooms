@@ -14,11 +14,15 @@ class WikiApi:
         response = requests.get(url, param)
         if response.ok:
             response_json = response.json()
-            try:
-                self.pageid = response_json["query"]["search"][0]["pageid"]
-                return self.pageid
-            except IndexError:
-                return None
+            return self.parse_pageid(response_json)
+
+
+    def parse_pageid(self, data):
+        try:
+            self.pageid = data["query"]["search"][0]["pageid"]
+            return self.pageid
+        except IndexError:
+            return None
 
 
     def request_get_by_pageid(self):
@@ -48,6 +52,3 @@ class WikiApi:
         else:
             description = self.request_get_by_pageid()
             return description
-
-# description = WikiApi().get_description("piton de la fournaise")
-# print(description)
