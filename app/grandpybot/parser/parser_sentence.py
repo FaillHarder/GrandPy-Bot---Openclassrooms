@@ -1,24 +1,19 @@
-from stop_word import stop_word
+from .stop_word import stop_word
 import re
 
 
 class ParserSentence:
+
     def __init__(self):
         self.sentence = None
-
 
     def remove_uppercase(self, sentence):
         return sentence.lower()
 
-
     def remove_punctuation(self, sentence):
         sentence = sentence.replace("'", " ")
         sentence = sentence.replace("-", " ")
-        sentence = re.sub(r'[^\w\s]','',sentence)
-        return sentence
-
-    def remove_extra_space(self, sentence):
-        sentence.replace("  ", " ")
+        sentence = re.sub(r'[^\w\s]', '', sentence)
         return sentence
 
     def extract_word(self, sentence):
@@ -42,11 +37,5 @@ class ParserSentence:
     def clean(self, sentence):
         sentence = self.remove_uppercase(sentence)
         sentence = self.remove_punctuation(sentence)
-        sentence = self.remove_extra_space(sentence)
         sentence = self.extract_word(sentence)
         return sentence
-
-
-# message = "Salut"
-# message_clear = ParserSentence().clean(message)
-# print(message_clear)

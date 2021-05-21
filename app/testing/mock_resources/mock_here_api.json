@@ -1,0 +1,38 @@
+{
+    "items": [
+        {
+            "title": "Avenue du Piton de la Fournaise, 97400 Saint-Denis, Réunion",
+            "id": "here:af:streetsection:0PzTW-utjefxfPLCgkUT3C",
+            "resultType": "street",
+            "address": {
+                "label": "Avenue du Piton de la Fournaise",
+                "countryCode": "REU",
+                "countryName": "Réunion",
+                "state": "Réunion",
+                "county": "Réunion",
+                "city": "Saint-Denis",
+                "district": "Saint-Denis",
+                "street": "Avenue du Piton de la Fournaise",
+                "postalCode": "97400"
+            },
+            "position": {
+                "lat": -20.88334,
+                "lng": 55.44244
+            },
+            "mapView": {
+                "west": 55.44086,
+                "south": -20.88337,
+                "east": 55.44402,
+                "north": -20.88333
+            },
+            "scoring": {
+                "queryScore": 0.99,
+                "fieldScore": {
+                    "streets": [
+                        0.9
+                    ]
+                }
+            }
+        }
+    ]
+}

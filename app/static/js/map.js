@@ -5,8 +5,8 @@ var platform = new H.service.Platform({
 
 // Get the default map types from the Platform object:
 var maptypes = platform.createDefaultLayers();
-var latitude = 45.72077;
-var longitude = 3.98732;
+var latitude = 46.00;
+var longitude = 2.00;
 // Instantiate the map:
 var map = new H.Map(
     document.getElementById('map_container'),
@@ -46,6 +46,6 @@ var icon = new H.map.DomIcon(animatedSvg),
 // Create the default UI:
 var ui = H.ui.UI.createDefault(map, maptypes, 'fr-FR');
 map.setCenter(coords);
-map.setZoom(14);
+map.setZoom(0);
 map.addObject(marker);
 

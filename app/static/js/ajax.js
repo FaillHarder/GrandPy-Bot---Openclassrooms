@@ -1,10 +1,8 @@
-
-
 let form = document.querySelector("#user_text_form");
-let text = document.querySelector(".conversation");
+const parent = document.querySelector(".conversation");
 
 
-function posFormData(url, data) {
+function postFormData(url, data) {
     return fetch(url, {
         method: "POST",
         body: data
@@ -16,35 +14,32 @@ function posFormData(url, data) {
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    posFormData("/ajax", new FormData(form))
+    postFormData("/ajax", new FormData(form))
     .then(response => {
         
-        displayGrandpyMessage(response["grandpy_address"])
-        displayInfo(response["address"])
-        displayGrandpyMessage(response["grandpy_descript"])
-        displayInfo(response["descriptif"])
-        
-        let lat = response["lat"]
-        let lng = response["lng"]
-        coords = {lat, lng}
-        map.setCenter(coords);
-        map.addObject(new H.map.DomMarker(coords, {icon: icon}));
+        if ("grandpy_error" in response) {
+            displayBadInput(response)
+            rezUserInput()
+        } else {
+            displayGoodInput(response)
+            rezUserInput()
+        }
     })
 })
 
-const parent = document.querySelector(".conversation");
-
-function displayUserMessage(submit) {
-    let user = document.createElement("p");
-    parent.appendChild(user);
-    user.innerHTML = submit;
-}
 
 function displayGrandpyMessage(message) {
     let grandpy = document.createElement("p");
     grandpy.className = "bubble bubble-bottom-left";
     parent.appendChild(grandpy);
-    grandpy.innerHTML = message;
+    grandpy.innerHTML = "🤖👴" + message;
+}
+
+function displayUserMessage(user_input) {
+    let user = document.createElement("p");
+    user.className = "bubble2 bubble-bottom-right";
+    parent.appendChild(user);
+    user.innerHTML = user_input;
 }
 
 function displayInfo(data) {
@@ -54,3 +49,29 @@ function displayInfo(data) {
     info.innerHTML = data;
 }
 
+
+function rezUserInput() {
+    let rez = document.getElementById("user_input");
+    rez.value = ""
+}
+
+function displayBadInput(response) {
+    let user_input = document.getElementById("user_input").value;
+    displayUserMessage(user_input)
+    displayGrandpyMessage(response["grandpy_error"])
+}
+
+function displayGoodInput(response) {
+    let user_input = document.getElementById("user_input").value;
+    displayUserMessage(user_input)
+    displayGrandpyMessage(response["grandpy_address"])
+    displayInfo(response["address"])
+    displayGrandpyMessage(response["grandpy_descript"])
+    displayInfo(response["descriptif"])
+    let lat = response["lat"]
+    let lng = response["lng"]
+    coords = {lat, lng}
+    map.setCenter(coords);
+    map.setZoom(14);
+    map.addObject(new H.map.DomMarker(coords, {icon: icon}));
+}

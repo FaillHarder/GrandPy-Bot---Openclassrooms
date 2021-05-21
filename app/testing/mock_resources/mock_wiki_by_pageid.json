@@ -1,0 +1,21 @@
+{
+    "batchcomplete": true,
+    "warnings": {
+        "main": {
+            "warnings": "Unrecognized parameter: ewplaintext."
+        },
+        "extracts": {
+            "warnings": "The \"exsentences\" parameter may have unexpected results when used in HTML mode.\nHTML may be malformed and/or unbalanced and may omit inline images. Use at your own risk. Known problems are listed at https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TextExtracts#Caveats."
+        }
+    },
+    "query": {
+        "pages": [
+            {
+                "pageid": 164149,
+                "ns": 0,
+                "title": "Piton de la Fournaise",
+                "extract": "<p>Le <b>piton de la Fournaise</b></p>"
+            }
+        ]
+    }
+}

@@ -1,8 +1,8 @@
-import re
-from flask import render_template, url_for, request, jsonify
 from . import app
-from wiki_api import WikiApi
-from grandpy import Grandpy
+from .grandpybot.grandpy import Grandpy
+
+from flask import render_template, request, jsonify
+
 
 @app.route("/")
 def home():
@@ -13,5 +13,4 @@ def home():
 def ajax():
     user_text = request.form["user_input"]
     response = Grandpy().get_response(user_text)
-    print(response)
     return jsonify(response)

@@ -9,17 +9,19 @@ class WikiApi:
         param = {
             "list": "search",
             "srsearch": title,
-            "format":"json"
+            "format": "json"
         }
         response = requests.get(url, param)
         if response.ok:
             response_json = response.json()
-            try:
-                self.pageid = response_json["query"]["search"][0]["pageid"]
-                return self.pageid
-            except IndexError:
-                return None
+            return self.parse_pageid(response_json)
 
+    def parse_pageid(self, data):
+        try:
+            self.pageid = data["query"]["search"][0]["pageid"]
+            return self.pageid
+        except IndexError:
+            return None
 
     def request_get_by_pageid(self):
 
@@ -31,23 +33,23 @@ class WikiApi:
             "exsentences": 2,
             "explaintext": 1,
             "exsectionformat": "plain",
-            "format":"json"
+            "format": "json"
         }
         response = requests.get(url, param)
         if response.ok:
             response_json = response.json()
-            try:
-                return response_json["query"]["pages"][0]["extract"]
-            except KeyError:
-                return None
+            return self.parse_extract(response_json)
+
+    def parse_extract(self, data):
+        try:
+            return data["query"]["pages"][0]["extract"]
+        except KeyError:
+            return None
 
     def get_description(self, title):
         pageid = self.request_get_by_title(title)
-        if pageid == None:
+        if pageid is None:
             return None
         else:
             description = self.request_get_by_pageid()
             return description
-
-# description = WikiApi().get_description("piton de la fournaise")
-# print(description)
