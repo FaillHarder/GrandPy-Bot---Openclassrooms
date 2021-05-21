@@ -49,6 +49,7 @@ function displayInfo(data) {
     info.innerHTML = data;
 }
 
+
 function rezUserInput() {
     let rez = document.getElementById("user_input");
     rez.value = ""

@@ -1,8 +1,8 @@
-import re
-from flask import render_template, url_for, request, jsonify
 from . import app
-from wiki_api import WikiApi
-from grandpy import Grandpy
+from .grandpybot.grandpy import Grandpy
+
+from flask import render_template, request, jsonify
+
 
 @app.route("/")
 def home():

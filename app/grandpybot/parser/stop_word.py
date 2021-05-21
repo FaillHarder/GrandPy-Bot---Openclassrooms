@@ -1,11 +1,10 @@
-
-stop_word=[
+stop_word = [
         "a", "abord", "absolument", "afin", "ah", "ai",
         "aie", "ailleurs", "ainsi", "ait", "allaient",
-        "allo", "allons", "allô", "alors", "anterieur" 
-        "anterieure", "anterieures", "apres", "après" 
+        "allo", "allons", "allô", "alors", "anterieur",
+        "anterieure", "anterieures", "apres", "après",
         "as", "assez", "attendu", "au", "aucun", "aucune",
-        "aujourd", "aujourd'hui", "aupres", "auquel", "aura", 
+        "aujourd", "aujourd'hui", "aupres", "auquel", "aura",
         "auraient", "aurait", "auront", "aussi", "autre",
         "autrefois", "autrement", "autres", "autrui", "aux",
         "auxquelles", "auxquels", "avaient", "avais", "avait",
@@ -87,12 +86,13 @@ stop_word=[
         "tenant", "tend", "tenir", "tente", "tes", "tic", "tien", "tienne",
         "tiennes", "tiens", "toc", "toi", "toi-même", "ton", "touchant",
         "toujours", "tous", "tout", "toute", "toutefois", "toutes", "treize",
-        "trente", "tres", "trois", "troisième", "troisièmement", "trop" 
+        "trente", "tres", "trois", "troisième", "troisièmement", "trop",
         "très", "tsoin", "tsouin", "tu", "té", "u", "un", "une", "unes",
-        "uniformement", "unique", "trouve", "uniques", "uns", "v", "va", "vais",
-        "vas", "veux", "voudrais", "vers", "via", "vif", "vifs", "vingt",
-        "vivat", "vive", "vives", "vlan", "voici", "voilà", "vont", "vos",
-        "votre", "vous", "vous-mêmes", "vu", "vé", "vôtre", "vôtres",
+        "uniformement", "unique", "trouve", "uniques", "uns", "v", "va",
+        "vais", "vas", "veux", "voudrais", "vers", "via", "vif", "vifs",
+        "vingt", "vivat", "vive", "vives", "vlan", "voici",
+        "voilà", "vont", "vos", "votre", "vous",
+        "vous-mêmes", "vu", "vé", "vôtre", "vôtres",
         "w", "x", "y", "z", "zut", "à", "â", "ça", "ès", "étaient", "étais",
         "était", "étant", "été", "être", "ô", "connais", "sais",
         "adresse", "grandpy", "l'adresse", "salut"

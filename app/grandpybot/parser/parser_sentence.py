@@ -1,9 +1,9 @@
-from stop_word import stop_word
-
+from .stop_word import stop_word
 import re
 
 
-class Parser:
+class ParserSentence:
+
     def __init__(self):
         self.sentence = None
 
@@ -16,10 +16,6 @@ class Parser:
         sentence = re.sub(r'[^\w\s]', '', sentence)
         return sentence
 
-    def remove_extra_space(self, sentence):
-        sentence.replace("  ", " ")
-        return sentence
-
     def extract_word(self, sentence):
         liste_index = []
         stop_word_list = stop_word
@@ -30,14 +26,16 @@ class Parser:
         for word in sentence_list_substitute:
             if word in sentence_list:
                 liste_index.append(sentence_list.index(word))
-        first_index = liste_index[0]
-        last_index = liste_index[-1]
-        sentence_clear = " ".join(sentence_list[first_index:last_index+1])
-        return sentence_clear
+        if len(liste_index) >= 1:
+            first_index = liste_index[0]
+            last_index = liste_index[-1]
+            sentence_clear = " ".join(sentence_list[first_index:last_index+1])
+            return sentence_clear
+        else:
+            return None
 
     def clean(self, sentence):
         sentence = self.remove_uppercase(sentence)
         sentence = self.remove_punctuation(sentence)
-        sentence = self.remove_extra_space(sentence)
         sentence = self.extract_word(sentence)
         return sentence

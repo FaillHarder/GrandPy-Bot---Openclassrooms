@@ -1,5 +1,5 @@
 from typing import Sequence
-from parser_sentence import ParserSentence
+from ..grandpybot.parser.parser_sentence import ParserSentence
 import re
 
 

@@ -1,7 +1,7 @@
-from here_api import HereApi
-from message_grandpy import grandpy_error, grandpy_response, grandpy_story
-from parser_sentence import ParserSentence
-from wiki_api import WikiApi
+from .api.here_api import HereApi
+from .message_grandpy import grandpy_error, grandpy_response, grandpy_story
+from .parser.parser_sentence import ParserSentence
+from .api.wiki_api import WikiApi
 
 from random import choice
 
