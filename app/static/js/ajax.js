@@ -29,26 +29,20 @@ form.addEventListener("submit", function (event) {
 
 
 function displayGrandpyMessage(message) {
-    let grandpy = document.createElement("p");
-    grandpy.className = "bubble bubble-bottom-left";
-    parent.appendChild(grandpy);
-    grandpy.innerHTML = "🤖👴" + message;
+    const messageList = document.getElementsByClassName("conversation");
+    const newDiv = document.createElement("div");
+    newDiv.className = "bubble bubble-bottom-left";
+    newDiv.innerHTML = "🤖👴" + message;
+    messageList[0].prepend(newDiv);
 }
 
 function displayUserMessage(user_input) {
-    let user = document.createElement("p");
-    user.className = "bubble2 bubble-bottom-right";
-    parent.appendChild(user);
-    user.innerHTML = user_input;
+    const messageList = document.getElementsByClassName("conversation");
+    const newDiv = document.createElement("div");
+    newDiv.className = "bubble2 bubble-bottom-right";
+    newDiv.innerHTML = user_input;
+    messageList[0].prepend(newDiv);
 }
-
-function displayInfo(data) {
-    let info = document.createElement("p");
-    info.className = "info";
-    parent.appendChild(info);
-    info.innerHTML = data;
-}
-
 
 function rezUserInput() {
     let rez = document.getElementById("user_input");
@@ -64,10 +58,8 @@ function displayBadInput(response) {
 function displayGoodInput(response) {
     let user_input = document.getElementById("user_input").value;
     displayUserMessage(user_input)
-    displayGrandpyMessage(response["grandpy_address"])
-    displayInfo(response["address"])
-    displayGrandpyMessage(response["grandpy_descript"])
-    displayInfo(response["descriptif"])
+    displayGrandpyMessage(response["grandpy_address"] + response["address"])
+    displayGrandpyMessage(response["grandpy_descript"] + response["descriptif"])
     let lat = response["lat"]
     let lng = response["lng"]
     coords = {lat, lng}

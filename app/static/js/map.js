@@ -5,8 +5,8 @@ var platform = new H.service.Platform({
 
 // Get the default map types from the Platform object:
 var maptypes = platform.createDefaultLayers();
-var latitude = 46.00;
-var longitude = 2.00;
+var latitude = 48.858370;
+var longitude = 2.294481;
 // Instantiate the map:
 var map = new H.Map(
     document.getElementById('map_container'),

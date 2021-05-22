@@ -1,5 +1,5 @@
-
 import requests
+
 apiKey = "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k"
 
 
@@ -7,9 +7,11 @@ class HereApi:
 
     def get_request(self, sentence_parser):
 
-        url = "https://geocode.search.hereapi.com/v1/geocode"
+        url = "https://discover.search.hereapi.com/v1/discover"
         params = {
             "apiKey": apiKey,
+            "limit": 2,
+            "at": "0,0",
             "q": sentence_parser
         }
         response = requests.get(url, params)
