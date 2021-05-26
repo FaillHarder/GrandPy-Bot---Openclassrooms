@@ -99,6 +99,16 @@ h1 {
     transform: scale(1, -1);
 }
 
+.loader {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+}
+
+.hidden {
+    display: none;
+}
+
 .info {
     font-size: 16px;
     margin: 5px 50px;
@@ -120,19 +130,6 @@ h1 {
     color: #000;
     transform: scale(1, -1);
   }
-  
-  /* .bubble-bottom-left:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 24px solid rgb(151, 151, 151);
-    border-right: 12px solid transparent;
-    border-top: 12px solid rgb(151, 151, 151);
-    border-bottom: 20px solid transparent;
-    left: 32px;
-    bottom: -24px;
-  } */
 
 .bubble2 {
     position: relative;
@@ -149,19 +146,6 @@ h1 {
     color: #000;
     transform: scale(1, -1);
   }
-  
-/* .bubble-bottom-right:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    border-left: 24px solid rgb(241, 168, 168);
-    border-right: 12px solid transparent;
-    border-top: 12px solid rgb(241, 168, 168);
-    border-bottom: 20px solid transparent;
-    right: 32px;
-    bottom: -24px;
-  } */
 
 form {
     display: flex;

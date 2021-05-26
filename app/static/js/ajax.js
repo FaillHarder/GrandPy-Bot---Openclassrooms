@@ -1,44 +1,43 @@
 let form = document.querySelector("#user_text_form");
-const parent = document.querySelector(".conversation");
+let loader = document.querySelector(".loader");
 
 
-function postFormData(url, data) {
-    return fetch(url, {
+async function postFormData(url, data) {
+    let rep = await fetch(url, {
         method: "POST",
         body: data
-    })
-    .then(response => response.json())
-    .catch(error => console.log(error))
+    });
+    let response = await rep.json();
+    return response
 }
 
-form.addEventListener("submit", function (event) {
+
+
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    postFormData("/ajax", new FormData(form))
-    .then(response => {
-        
-        if ("grandpy_error" in response) {
-            displayBadInput(response)
-            rezUserInput()
-        } else {
-            displayGoodInput(response)
-            rezUserInput()
-        }
-    })
+    loader.className = "loader";
+    let response = await postFormData("/ajax", new FormData(form))
+    if ("grandpy_error" in response) {
+        displayBadInput(response)    
+    } else {
+        displayGoodInput(response)
+    }
+    loader.className += " hidden"
+    rezUserInput()
 })
 
-
 function displayGrandpyMessage(message) {
-    const messageList = document.getElementsByClassName("conversation");
-    const newDiv = document.createElement("div");
+    let messageList = document.getElementsByClassName("conversation");
+    let newDiv = document.createElement("div");
     newDiv.className = "bubble bubble-bottom-left";
     newDiv.innerHTML = "🤖👴" + message;
     messageList[0].prepend(newDiv);
 }
 
 function displayUserMessage(user_input) {
-    const messageList = document.getElementsByClassName("conversation");
-    const newDiv = document.createElement("div");
+    let messageList = document.getElementsByClassName("conversation");
+    let newDiv = document.createElement("div");
     newDiv.className = "bubble2 bubble-bottom-right";
     newDiv.innerHTML = user_input;
     messageList[0].prepend(newDiv);
@@ -63,7 +62,12 @@ function displayGoodInput(response) {
     let lat = response["lat"]
     let lng = response["lng"]
     coords = {lat, lng}
+    displayMap(coords)
+}
+
+function displayMap(coords) {
+    let marker = new H.map.Marker(coords, { icon: icon });
     map.setCenter(coords);
     map.setZoom(14);
-    map.addObject(new H.map.DomMarker(coords, {icon: icon}));
+    map.addObject(marker);
 }

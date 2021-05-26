@@ -29,12 +29,13 @@
                 <script src="{{ url_for('static', filename='js/map.js') }}"></script>
             </div>
             <div class="conversation">
+                <img src="static/img/loader.svg" alt="loader" class="loader hidden">
                 <p class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. Demande moi un endroit.</p>
             </div>
             <form id="user_text_form">
                 <p>
                     <label for="user_input"></label>
-                    <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse d'OpenClassrooms?">
+                    <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse du Taj Mahal?">
                     <input type="submit" name="user_submit" id="user_submit" value="Envoyer">
                 </p>
             </form>

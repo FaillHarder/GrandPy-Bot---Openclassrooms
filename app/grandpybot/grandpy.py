@@ -10,8 +10,7 @@ class Grandpy:
 
     def get_response(self, sentence):
         data = {}
-        par = ParserSentence()
-        user_message = par.clean(sentence)
+        user_message = ParserSentence().clean(sentence)
         data_here_api = HereApi().get_request(user_message)
         if data_here_api is None:
             data = {
