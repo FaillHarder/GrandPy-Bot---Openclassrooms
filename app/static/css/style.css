@@ -166,14 +166,28 @@ form {
     justify-content: center;
 }
 
-.user_input {
-    width: 500px;
-    margin-top: 5px;
+.form_user_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.user_submit {
-    margin-left: 2px;
+.form_user_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.user_text_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_input {
+    width: 500px;
+}
+
+
 
 aside {
     padding: 15px;
@@ -237,6 +251,10 @@ footer h3 {
         height: 40px;
     }
 
+    .techno li {
+        padding: 40px;
+    }
+
     nav h3 {
         padding: 0;
         font-size: 14px;
@@ -291,4 +309,33 @@ footer h3 {
         width: 140px;
         height: 140px;
     }
+}
+
+@media screen and (max-width: 520px) {
+
+    .techno li {
+        padding: 25px;
+    }
+
+    #map_container {
+        width: 80%;
+    }
+
+    .bubble, .bubble2 {
+        font-size: 14px;
+      }
+
+    .user_input {
+        text-align: center;
+    }
+    
+    form {
+        flex-direction: column;
+    }
+
+    .form_user_submit {
+        margin-top: 2px;
+    }
+
+    
 }

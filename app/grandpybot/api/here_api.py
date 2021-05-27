@@ -1,6 +1,6 @@
-import requests
+from config import apiKey
 
-apiKey = "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k"
+import requests
 
 
 class HereApi:
