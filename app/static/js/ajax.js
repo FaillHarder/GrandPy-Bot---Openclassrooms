@@ -1,58 +1,58 @@
 let form = document.querySelector("#user_text_form");
-const parent = document.querySelector(".conversation");
+let loader = document.querySelector(".loader");
 
-
-function postFormData(url, data) {
-    return fetch(url, {
+async function postFormData(url, data) {
+    let rep = await fetch(url, {
         method: "POST",
         body: data
-    })
-    .then(response => response.json())
-    .catch(error => console.log(error))
+    });
+    let response = await rep.json();
+    return response
 }
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
-
-    postFormData("/ajax", new FormData(form))
-    .then(response => {
-        
-        if ("grandpy_error" in response) {
-            displayBadInput(response)
-            rezUserInput()
-        } else {
-            displayGoodInput(response)
-            rezUserInput()
-        }
-    })
+    // display loader img
+    loader.className = "loader";
+    let response = await postFormData("/ajax", new FormData(form))
+    if ("grandpy_error" in response) {
+        displayBadInput(response)    
+    } else {
+        displayGoodInput(response)
+    }
+    loader.className += " hidden"
+    rezUserInput()
 })
 
+function createDiv(classname1, classname2) {
+    let newDiv = document.createElement("div");
+    let newDiv2 = document.createElement("div");
+    newDiv.className = classname1;
+    newDiv2.className = classname2;
+    return divList = [newDiv, newDiv2]
+}
 
 function displayGrandpyMessage(message) {
-    let grandpy = document.createElement("p");
-    grandpy.className = "bubble bubble-bottom-left";
-    parent.appendChild(grandpy);
-    grandpy.innerHTML = "🤖👴" + message;
+    let messageList = document.getElementsByClassName("conversation");
+    let div = createDiv("bubble", "grandpy_box");
+    div[0].innerHTML = "🤖👴" + message;
+    div[1].appendChild(div[0]);
+    messageList[0].prepend(div[1]);
 }
 
 function displayUserMessage(user_input) {
-    let user = document.createElement("p");
-    user.className = "bubble2 bubble-bottom-right";
-    parent.appendChild(user);
-    user.innerHTML = user_input;
+    let messageList = document.getElementsByClassName("conversation");
+    let div = createDiv("bubble2", "user_box")
+    div[0].innerHTML = user_input;
+    div[1].appendChild(div[0]);
+    messageList[0].prepend(div[1]);
 }
 
-function displayInfo(data) {
-    let info = document.createElement("p");
-    info.className = "info";
-    parent.appendChild(info);
-    info.innerHTML = data;
-}
-
-
-function rezUserInput() {
-    let rez = document.getElementById("user_input");
-    rez.value = ""
+function displayMap(coords) {
+    let marker = new H.map.Marker(coords, { icon: icon });
+    map.setCenter(coords);
+    map.setZoom(14);
+    map.addObject(marker);
 }
 
 function displayBadInput(response) {
@@ -64,14 +64,15 @@ function displayBadInput(response) {
 function displayGoodInput(response) {
     let user_input = document.getElementById("user_input").value;
     displayUserMessage(user_input)
-    displayGrandpyMessage(response["grandpy_address"])
-    displayInfo(response["address"])
-    displayGrandpyMessage(response["grandpy_descript"])
-    displayInfo(response["descriptif"])
+    displayGrandpyMessage(response["grandpy_address"] + response["address"])
+    displayGrandpyMessage(response["grandpy_descript"] + response["descriptif"])
     let lat = response["lat"]
     let lng = response["lng"]
     coords = {lat, lng}
-    map.setCenter(coords);
-    map.setZoom(14);
-    map.addObject(new H.map.DomMarker(coords, {icon: icon}));
+    displayMap(coords)
+}
+
+function rezUserInput() {
+    let rez = document.getElementById("user_input");
+    rez.value = ""
 }

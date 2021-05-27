@@ -9,7 +9,7 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-    <title>Document</title>
+    <title>GrandPy-Bot</title>
 </head>
 <body>
     <div class="container_grille">
@@ -28,13 +28,16 @@
             <div id="map_container">
                 <script src="{{ url_for('static', filename='js/map.js') }}"></script>
             </div>
+            <img src="static/img/loader.svg" alt="loader" class="loader hidden">
             <div class="conversation">
-                <p class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. </p>
+                <div class="grandpy_box">
+                    <div class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. Demande moi un endroit.</div>
+                </div>
             </div>
             <form id="user_text_form">
                 <p>
                     <label for="user_input"></label>
-                    <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse d'OpenClassrooms?">
+                    <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse du Taj Mahal?">
                     <input type="submit" name="user_submit" id="user_submit" value="Envoyer">
                 </p>
             </form>
