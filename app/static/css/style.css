@@ -311,10 +311,27 @@ footer h3 {
     }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 600px) {
+
+    header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    nav h3 {
+        font-size: 14px;
+    }
+
+    .techno {
+        height: 20px;
+    }
 
     .techno li {
-        padding: 25px;
+        padding: 0 15px;
+    }
+
+    .techno li a img {
+        width: 12px;
     }
 
     #map_container {
@@ -323,6 +340,8 @@ footer h3 {
 
     .bubble, .bubble2 {
         font-size: 14px;
+        padding: 2px;
+        margin-bottom: 5px;
       }
 
     .user_input {
@@ -337,5 +356,21 @@ footer h3 {
         margin-top: 2px;
     }
 
-    
+    aside {
+        padding: 0;
+        height: 100px;
+    }
+
+    aside img {
+        width: auto;
+        height: 110px;
+    }
+
+    footer h3 {
+        font-size: 16px;
+    }
+
+    .lien a {
+        font-size: 16px;
+    }
 }
