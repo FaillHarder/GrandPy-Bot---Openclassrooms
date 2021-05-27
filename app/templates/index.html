@@ -34,13 +34,17 @@
                     <div class="bubble bubble-bottom-left">🤖👴Bienvenu mon petit je suis GrandPy, le papy robot. Demande moi un endroit.</div>
                 </div>
             </div>
-            <form id="user_text_form">
-                <p>
-                    <label for="user_input"></label>
-                    <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse du Taj Mahal?">
-                    <input type="submit" name="user_submit" id="user_submit" value="Envoyer">
-                </p>
-            </form>
+            <div class="form_container">
+                <form id="user_text_form">
+                    <div class="form_user_input">
+                        <label for="user_input"></label>
+                        <input type="text" name="user_input" id="user_input" class="user_input" placeholder="Salut GrandPy, Est-ce que tu connais l'adresse du Taj Mahal?">
+                    </div>
+                    <div class="form_user_submit">
+                        <input type="submit" name="user_submit" id="user_submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
             <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
         </main>
         <aside>
