@@ -9,13 +9,13 @@ grandpy_story = [
             "Mais t'ai-je déjà raconté l'histoire de ce\
                 quartier qui m'a vu en culottes courtes? : ",
             "T'ai-je déjà raconté l'histoire de cet endroit\
-                qui a vue GrandMy en couche culotte? : ",
+                qui a vue GrandMy en couche-culotte? : ",
             "Mais t'ai-je déjà raconté l'histoire de ce lieu\
-                qui ma vue jeune homme? : "
+                qui m'a vue jeune homme? : "
         ]
 grandpy_error = [
         "Désolé mon petit je n'ai pas compris ta demande! ",
         "J'ai beau me creuser la tête, je n'ai pas compris ta demande! ",
         "Tu m'as demandé un endroit ? je n'ai pas compris ta demande! ",
-        "Je ne sais pas si c'est mon age mais je n'ai pas compris ta demande! "
+        "Je ne sais pas si c'est mon âge mais je n'ai pas compris ta demande! "
     ]

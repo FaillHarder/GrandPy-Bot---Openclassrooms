@@ -7,19 +7,33 @@ from random import choice
 
 
 class Grandpy:
+    """
+    Grandpy retrun response for frontend.
 
+    ....
+
+    Method
+    ------
+    get_response(sentence):
+        Take as parameter a user_input from Front-end
+        return a dictionary
+    """
     def get_response(self, sentence):
-        data = {}
+        """
+        Use ParserSentence() to clean user_input
+        Use HereApi() to get address, lat and lng
+        Use WikiApi() to get a description
+        Use message_grandpy.py for choice random GrandPy message
+        """
         user_message = ParserSentence().clean(sentence)
         data_here_api = HereApi().get_request(user_message)
-        if data_here_api is None:
-            data = {
+        if not data_here_api:
+            return {
                 "grandpy_error": choice(grandpy_error)
                 }
-            return data
         else:
             data_wiki_api = WikiApi().get_description(user_message)
-            data = {
+            return {
                 "grandpy_address": choice(grandpy_response),
                 "address": data_here_api["address"],
                 "grandpy_descript": choice(grandpy_story),
@@ -27,4 +41,3 @@ class Grandpy:
                 "lat": data_here_api["lat"],
                 "lng": data_here_api["lng"]
             }
-            return data

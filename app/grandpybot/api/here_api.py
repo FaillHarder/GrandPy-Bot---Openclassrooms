@@ -4,6 +4,11 @@ apiKey = "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k"
 
 
 class HereApi:
+    """
+    Class make a request to here API
+    Take as parameter a user_input parser by ParserSentence()
+    Return a dictionary
+    """
 
     def get_request(self, sentence_parser):
 

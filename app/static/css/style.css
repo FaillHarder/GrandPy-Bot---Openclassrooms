@@ -93,16 +93,19 @@ h1 {
     height: 480px;
     width: 100%;
     flex: 1;
-    display: grid;
+    display: flex;
+    flex-direction: column-reverse;
     grid-auto-rows: max-content;
     overflow-y: auto;
-    transform: scale(1, -1);
+}
+
+.loader_box {
+    position: absolute;
 }
 
 .loader {
     position: absolute;
-    justify-self: center;
-    align-self: center;
+    z-index: 1;
 }
 
 .hidden {
@@ -115,8 +118,15 @@ h1 {
     padding-bottom: 20px;
 }
 
+.grandpy_box {
+    display: flex;
+}
+
 .bubble {
+    
     position: relative;
+    display: block;
+    align-items: center;
     align-content: center;
     font-family: sans-serif;
     font-size: 18px;
@@ -128,12 +138,17 @@ h1 {
     padding: 14px;
     text-align: center;
     color: #000;
-    transform: scale(1, -1);
   }
+
+.user_box {
+    display: flex;
+    justify-content: flex-end;
+}
 
 .bubble2 {
     position: relative;
-    justify-self: end;
+    display: block;
+    align-items: flex-end;
     font-family: sans-serif;
     font-size: 18px;
     line-height: 20px;
@@ -144,7 +159,6 @@ h1 {
     padding: 14px;
     text-align: center;
     color: #000;
-    transform: scale(1, -1);
   }
 
 form {
