@@ -1,6 +1,6 @@
 //Initialize the Platform object:
 var platform = new H.service.Platform({
-    'apikey': "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k"
+    'apikey': "{{api_key}}"
 });
 
 // Get the default map types from the Platform object:
