@@ -38,3 +38,6 @@ class HereApi:
                 }
         except IndexError:
             return None
+
+
+HereApi().get_request("parc des princes")
