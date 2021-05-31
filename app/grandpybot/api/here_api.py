@@ -1,4 +1,4 @@
-from config import apiKey
+from config import HERE_API_KEY
 
 import requests
 
@@ -14,7 +14,7 @@ class HereApi:
 
         url = "https://discover.search.hereapi.com/v1/discover"
         params = {
-            "apiKey": apiKey,
+            "apiKey": HERE_API_KEY,
             "limit": 2,
             "at": "0,0",
             "q": sentence_parser
@@ -38,3 +38,6 @@ class HereApi:
                 }
         except IndexError:
             return None
+
+
+HereApi().get_request("parc des princes")
