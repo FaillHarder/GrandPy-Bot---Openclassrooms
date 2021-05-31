@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="static/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <!-- HERE JavaScript Libs & Style Sheets-->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <link rel="stylesheet" type="text/css"href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     <title>GrandPy-Bot</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
         </nav>
         <main>
             <div id="map_container">
-                <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+                <script src="static/js/map.js"></script>
             </div>
             <img src="static/img/loader.svg" alt="loader" class="loader hidden">
             <div class="conversation">
@@ -45,7 +47,7 @@
                     </div>
                 </form>
             </div>
-            <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+            <script src="static/js/ajax.js"></script>
         </main>
         <aside>
             <img src="static/img/grandpybot.png" alt="image robot">
