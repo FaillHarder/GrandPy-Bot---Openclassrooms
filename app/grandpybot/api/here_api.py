@@ -1,4 +1,4 @@
-from config import HERE_API_KEY
+# from config import HERE_API_KEY
 
 import requests
 
@@ -14,7 +14,7 @@ class HereApi:
 
         url = "https://discover.search.hereapi.com/v1/discover"
         params = {
-            "apiKey": HERE_API_KEY,
+            "apiKey": "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k",
             "limit": 2,
             "at": "0,0",
             "q": sentence_parser
