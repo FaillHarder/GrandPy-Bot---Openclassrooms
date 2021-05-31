@@ -1,3 +1,3 @@
+import os
 
-
-apiKey = "sWGnfLzvhwaNV5-9-Kuf043yeX5GMy2byCllEXpFr4k"
+HERE_API_KEY = os.environ.get("HERE_API_KEY")
