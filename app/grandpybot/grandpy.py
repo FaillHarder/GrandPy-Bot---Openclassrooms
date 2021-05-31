@@ -2,6 +2,7 @@ from .api.here_api import HereApi
 from .message_grandpy import grandpy_error, grandpy_response, grandpy_story
 from .parser.parser_sentence import ParserSentence
 from .api.wiki_api import WikiApi
+from config import HERE_API_KEY
 
 from random import choice
 
@@ -39,5 +40,6 @@ class Grandpy:
                 "grandpy_descript": choice(grandpy_story),
                 "descriptif": data_wiki_api,
                 "lat": data_here_api["lat"],
-                "lng": data_here_api["lng"]
+                "lng": data_here_api["lng"],
+                "apikey": HERE_API_KEY
             }

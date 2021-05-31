@@ -1,15 +1,13 @@
 from . import app
-import config
 from .grandpybot.grandpy import Grandpy
 
-
 from flask import render_template, request, jsonify
+import os
 
 
 @app.route("/")
 def home():
-    api_key = config.HERE_API_KEY
-    return render_template("index.html", api_key=api_key)
+    return render_template("index.html", apikey=os.environ.get("HERE_API_KEY"))
 
 
 @app.route("/ajax", methods=["POST"])

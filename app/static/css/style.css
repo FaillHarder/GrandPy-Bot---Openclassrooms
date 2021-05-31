@@ -25,7 +25,6 @@ header {
     color: aliceblue;
 }
 
-
 nav {
     background-color: brown;
     display: flex;
@@ -83,12 +82,6 @@ h1 {
     margin-bottom: 15px;
 }
 
-#map_container {
-    padding-bottom: 5px;
-    width: 600px;
-    height: 250px;
-}
-
 .conversation {
     height: 480px;
     width: 100%;
@@ -96,6 +89,7 @@ h1 {
     display: flex;
     flex-direction: column-reverse;
     grid-auto-rows: max-content;
+    margin-top: 5px;
     overflow-y: auto;
 }
 
@@ -112,10 +106,10 @@ h1 {
     display: none;
 }
 
-.info {
-    font-size: 16px;
-    margin: 5px 50px;
-    padding-bottom: 20px;
+.map_container {
+    padding-bottom: 5px;
+    width: 600px;
+    height: 250px;
 }
 
 .grandpy_box {
@@ -191,7 +185,7 @@ form {
 
 aside {
     padding: 15px;
-    height: 767px;
+    height: auto;
     background-color: brown;
     display: flex;
     justify-content: center;
@@ -282,12 +276,12 @@ footer h3 {
         width: auto;
     }
 
-    #map_container {
+    .map_container {
         width: 600px;
         height: 170px;
     }
 
-    #user_input {
+    .user_input {
         width: 400px;
     }
 
@@ -334,7 +328,7 @@ footer h3 {
         width: 12px;
     }
 
-    #map_container {
+    .map_container {
         width: 80%;
     }
 

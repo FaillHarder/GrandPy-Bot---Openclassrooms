@@ -24,31 +24,36 @@ form.addEventListener("submit", async function (event) {
     rezUserInput()
 })
 
-function createDiv(classname1, classname2) {
+function displayMessage(classname1, classname2, message) {
+    let messageList = document.getElementsByClassName("conversation");
     let newDiv = document.createElement("div");
     let newDiv2 = document.createElement("div");
     newDiv.className = classname1;
     newDiv2.className = classname2;
-    return divList = [newDiv, newDiv2]
+    newDiv.innerHTML = message;
+    newDiv2.appendChild(newDiv);
+    messageList[0].prepend(newDiv2);
 }
 
-function displayGrandpyMessage(message) {
-    let messageList = document.getElementsByClassName("conversation");
-    let div = createDiv("bubble", "grandpy_box");
-    div[0].innerHTML = "🤖👴" + message;
-    div[1].appendChild(div[0]);
-    messageList[0].prepend(div[1]);
-}
+function displayMap(coords, apikey) {
+    displayMessage("map_container", "grandpy_box", "")
+    
+    //Initialize the Platform object:
+    var platform = new H.service.Platform({
+        'apikey': apikey
+    });
+    // Get the default map types from the Platform object:
+    var maptypes = platform.createDefaultLayers();
+    // Instantiate the map:
+    var map = new H.Map(
+        document.querySelector('.map_container'),
+        maptypes.vector.normal.map,
+        coords = coords,
+        );
 
-function displayUserMessage(user_input) {
-    let messageList = document.getElementsByClassName("conversation");
-    let div = createDiv("bubble2", "user_box")
-    div[0].innerHTML = user_input;
-    div[1].appendChild(div[0]);
-    messageList[0].prepend(div[1]);
-}
-
-function displayMap(coords) {
+    var icon = new H.map.Icon("static/img/mapmarker.png");
+    // Create the default UI:
+    var ui = H.ui.UI.createDefault(map, maptypes, 'fr-FR');
     let marker = new H.map.Marker(coords, { icon: icon });
     map.setCenter(coords);
     map.setZoom(14);
@@ -57,19 +62,22 @@ function displayMap(coords) {
 
 function displayBadInput(response) {
     let user_input = document.getElementById("user_input").value;
-    displayUserMessage(user_input)
-    displayGrandpyMessage(response["grandpy_error"])
+    displayMessage("bubble2", "user_box", user_input)
+    displayMessage("bubble", "grandpy_box","🤖👴" + response["grandpy_error"])
 }
 
 function displayGoodInput(response) {
     let user_input = document.getElementById("user_input").value;
-    displayUserMessage(user_input)
-    displayGrandpyMessage(response["grandpy_address"] + response["address"])
-    displayGrandpyMessage(response["grandpy_descript"] + response["descriptif"])
     let lat = response["lat"]
     let lng = response["lng"]
-    coords = {lat, lng}
-    displayMap(coords)
+    let apikey = response["apikey"]
+    let coords = {lat, lng}
+    displayMessage("bubble2", "user_box", user_input)
+    displayMessage("bubble", "grandpy_box",
+        "🤖👴" + response["grandpy_address"] + response["address"])
+    displayMap(coords, apikey)
+    displayMessage("bubble", "grandpy_box",
+        "🤖👴" + response["grandpy_descript"] + response["descriptif"])
 }
 
 function rezUserInput() {
