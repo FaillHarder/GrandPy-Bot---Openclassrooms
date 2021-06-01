@@ -70,3 +70,7 @@ class WikiApi:
         else:
             description = self.request_get_by_pageid()
             return description
+
+
+test = WikiApi().get_description("kanbouktou")
+print(test)
