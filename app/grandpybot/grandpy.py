@@ -1,5 +1,8 @@
 from .api.here_api import HereApi
-from .message_grandpy import grandpy_error, grandpy_response, grandpy_story
+from .message_grandpy import (
+    grandpy_error, grandpy_response,
+    grandpy_story, grandpy_no_description
+    )
 from .parser.parser_sentence import ParserSentence
 from .api.wiki_api import WikiApi
 from config import HERE_API_KEY
@@ -34,12 +37,23 @@ class Grandpy:
                 }
         else:
             data_wiki_api = WikiApi().get_description(user_message)
-            return {
-                "grandpy_address": choice(grandpy_response),
-                "address": data_here_api["address"],
-                "grandpy_descript": choice(grandpy_story),
-                "descriptif": data_wiki_api,
-                "lat": data_here_api["lat"],
-                "lng": data_here_api["lng"],
-                "apikey": HERE_API_KEY
-            }
+            if not data_wiki_api:
+                return {
+                    "grandpy_address": choice(grandpy_response),
+                    "address": data_here_api["address"],
+                    "grandpy_descript": "",
+                    "descriptif": choice(grandpy_no_description),
+                    "lat": data_here_api["lat"],
+                    "lng": data_here_api["lng"],
+                    "apikey": HERE_API_KEY
+                }
+            else:
+                return {
+                    "grandpy_address": choice(grandpy_response),
+                    "address": data_here_api["address"],
+                    "grandpy_descript": choice(grandpy_story),
+                    "descriptif": data_wiki_api,
+                    "lat": data_here_api["lat"],
+                    "lng": data_here_api["lng"],
+                    "apikey": HERE_API_KEY
+                }

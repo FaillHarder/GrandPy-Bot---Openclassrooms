@@ -19,3 +19,10 @@ grandpy_error = [
         "Tu m'as demandé un endroit ? je n'ai pas compris ta demande! ",
         "Je ne sais pas si c'est mon âge mais je n'ai pas compris ta demande! "
     ]
+
+grandpy_no_description = [
+        "Désolé mon petit mais je n'ai jamais mis les pieds là-bas",
+        "Ma mémoire me fait défaut. Je ne me rappelle plus de ce lieu",
+        "Je n'ai aucun souvenir de cet endroit.",
+        "Je ne connais pas ce lieu mais j'y vais bientôt en vacances"
+]
