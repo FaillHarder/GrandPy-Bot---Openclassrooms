@@ -21,8 +21,6 @@ grandpy_error = [
     ]
 
 grandpy_no_description = [
-        "Désolé mon petit mais je n'ai jamais mis les pieds là-bas",
-        "Ma mémoire me fait défaut. Je ne me rappelle plus de ce lieu",
-        "Je n'ai aucun souvenir de cet endroit.",
-        "Je ne connais pas ce lieu mais j'y vais bientôt en vacances"
+        "Par contre je ne me souviens plus de mes vacances là-bas",
+        "Mais il me semble que je n'y suis jamais allé"
 ]
