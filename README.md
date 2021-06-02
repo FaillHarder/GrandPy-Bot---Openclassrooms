@@ -1,5 +1,5 @@
 # Projet 7 Openclassrooms - Créez GrandPy Bot, le papy-robot 🤖 👴
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)(https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 
 --------------------
 ## Présentation du projet
@@ -17,8 +17,10 @@ Une icône tourne pour indiquer que GrandPy est en train de réfléchir.
 
 Puis un nouveau message apparaît : 
 ```
-"Bien sûr mon poussin ! La voici : 7 cité Paradis, 75010 Paris." En-dessous, une carte Google Maps apparaît également avec un marqueur indiquant l'adresse demandée.
+"Bien sûr mon poussin ! La voici :
+7 cité Paradis, 75010 Paris."
 ```
+En-dessous, une carte Here Maps apparaît également avec un marqueur indiquant l'adresse demandée
 
 GrandPy envoie un nouveau message :
 ```
