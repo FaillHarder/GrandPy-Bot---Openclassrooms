@@ -31,7 +31,8 @@ la deuxième au 57 rue d'Hauteville et la troisième en impasse.
 ```
 
 ## Développé avec :
-* [Python](https://www.python.org/) * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 * [Requests](https://pypi.org/project/requests/) 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 
