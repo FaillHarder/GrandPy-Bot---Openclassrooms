@@ -1,5 +1,5 @@
 # Projet 7 Openclassrooms - Créez GrandPy Bot, le papy-robot 🤖 👴
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)(https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 
 --------------------
 ## Présentation du projet
@@ -35,4 +35,6 @@ la deuxième au 57 rue d'Hauteville et la troisième en impasse.
 * [Requests](https://pypi.org/project/requests/) 
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 * [Visual Studio Code](https://code.visualstudio.com/download)
-* [Hébergé sur heroku](https://dashboard.heroku.com/)
+
+## Hébergé avec :
+* [heroku](https://dashboard.heroku.com/)
